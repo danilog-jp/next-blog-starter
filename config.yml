@@ -2,6 +2,7 @@ title: Blog Title
 description: Blog Description
 heading: This is heading text
 subHeading: This is sub heading text
+logo: /images/logo.svg
 menu:
   - url: /
     label: Home

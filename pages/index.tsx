@@ -22,7 +22,10 @@ const Blog: React.FC<any> = ({ config, posts }) => {
                 />
               </span>
               <Link href={"/posts/" + post.slug}>
-                <a>{post.title}</a>
+                <a>
+                  <h2>{post.title}</h2>
+                  <div className="content">{post.excerpt}</div>
+                </a>
               </Link>
             </article>
           );

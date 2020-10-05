@@ -6,7 +6,7 @@ const Header: React.FC<any> = ({ config }) => {
       <div className="inner">
         <a href="" className="logo">
           <span className="symbol">
-            <img src="/images/logo.svg" alt="" />
+            <img src={config.logo} alt="" />
           </span>
           <span className="title">{config.title}</span>
         </a>
