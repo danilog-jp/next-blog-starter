@@ -1,9 +1,23 @@
 import * as React from "react";
 
-const Header: React.FC<any> = () => {
+const Header: React.FC<any> = ({ config }) => {
   return (
-    <header>
-      <p>Blog | Powered by Next.js</p>
+    <header id="header">
+      <div className="inner">
+        <a href="" className="logo">
+          <span className="symbol">
+            <img src="/images/logo.svg" alt="" />
+          </span>
+          <span className="title">{config.title}</span>
+        </a>
+        <nav>
+          <ul>
+            <li>
+              <a href="#menu">Menu</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
   );
 };

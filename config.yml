@@ -1,2 +1,9 @@
 title: Blog Title
 description: Blog Description
+heading: This is heading text
+subHeading: This is sub heading text
+menu:
+  - url: /
+    label: Home
+  - url: /sample-page
+    label: Sample page

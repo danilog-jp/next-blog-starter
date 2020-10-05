@@ -2,22 +2,32 @@ import * as React from "react";
 import DefaultLayout from "@/layouts/default";
 import Link from "next/link";
 import { getConfig, getAllPosts } from "@/api";
+import MainHeader from "@/includes/mainHeader";
 
-const Blog: React.FC<any> = (props) => {
+const Blog: React.FC<any> = ({ config, posts }) => {
   return (
-    <DefaultLayout title={props.title} description={props.description}>
-      <p>List of posts:</p>
-      <ul>
-        {props.posts.map(function (post, idx) {
+    <DefaultLayout config={config}>
+      <MainHeader config={config} />
+      <section className="tiles">
+        {posts.map(function (post) {
           return (
-            <li key={idx}>
+            <article className={post.className || "style1"} key={post.slug}>
+              <span className="image">
+                <img
+                  src={
+                    post.thumbnail ||
+                    "https://via.placeholder.com/450x450.png?text=+"
+                  }
+                  alt={post.title}
+                />
+              </span>
               <Link href={"/posts/" + post.slug}>
                 <a>{post.title}</a>
               </Link>
-            </li>
+            </article>
           );
         })}
-      </ul>
+      </section>
     </DefaultLayout>
   );
 };
@@ -28,8 +38,7 @@ export async function getStaticProps() {
   return {
     props: {
       posts: allPosts,
-      title: config.title,
-      description: config.description,
+      config,
     },
   };
 }

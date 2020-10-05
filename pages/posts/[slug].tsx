@@ -1,14 +1,19 @@
 import * as React from "react";
 import PostLayout from "@/layouts/post";
-import { getPostBySlug, getAllPosts } from "@/api";
+import { getPostBySlug, getAllPosts, getConfig } from "@/api";
 
-const Post: React.FC<any> = (props) => {
-  return <PostLayout title={props.title} content={props.content} />;
+const Post: React.FC<any> = ({ post, config }) => {
+  return <PostLayout post={post} config={config} />;
 };
 
 export async function getStaticProps(context) {
+  const config = await getConfig();
+  const post = await getPostBySlug(context.params.slug);
   return {
-    props: await getPostBySlug(context.params.slug),
+    props: {
+      post,
+      config,
+    },
   };
 }
 
