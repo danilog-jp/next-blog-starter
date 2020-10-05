@@ -7,3 +7,10 @@ menu:
     label: Home
   - url: /sample-page
     label: Sample page
+twitterUrl: https://twitter.com/?lang=en
+facebookUrl: https://www.facebook.com/
+instagramUrl: https://www.instagram.com/
+dribbleUrl: https://dribbble.com/
+githubUrl: https://github.com/
+emailUrl: \#
+rssUrl: \#

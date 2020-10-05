@@ -22,7 +22,7 @@ const DefaultLayout: React.FC<any> = ({ config, children }) => {
         <div id="main">
           <div className="inner">{children}</div>
         </div>
-        <Footer />
+        <Footer config={config} />
       </div>
       <>
         <script src="/js/jquery.min.js"></script>

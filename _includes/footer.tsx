@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const Footer: React.FC<any> = () => {
+const Footer: React.FC<any> = ({ config }) => {
   return (
     <footer id="footer">
       <div className="inner">
@@ -37,46 +37,73 @@ const Footer: React.FC<any> = () => {
         <section>
           <h2>Follow</h2>
           <ul className="icons">
-            <li>
-              <a href="#" className="icon brands style2 fa-twitter">
-                <span className="label">Twitter</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" className="icon brands style2 fa-facebook-f">
-                <span className="label">Facebook</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" className="icon brands style2 fa-instagram">
-                <span className="label">Instagram</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" className="icon brands style2 fa-dribbble">
-                <span className="label">Dribbble</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" className="icon brands style2 fa-github">
-                <span className="label">GitHub</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" className="icon brands style2 fa-500px">
-                <span className="label">500px</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" className="icon solid style2 fa-phone">
-                <span className="label">Phone</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" className="icon solid style2 fa-envelope">
-                <span className="label">Email</span>
-              </a>
-            </li>
+            {config.twitterUrl && (
+              <li>
+                <a
+                  href={config.twitterUrl}
+                  className="icon brands style2 fa-twitter"
+                >
+                  <span className="label">Twitter</span>
+                </a>
+              </li>
+            )}
+            {config.facebookUrl && (
+              <li>
+                <a
+                  href={config.facebookUrl}
+                  className="icon brands style2 fa-facebook-f"
+                >
+                  <span className="label">Facebook</span>
+                </a>
+              </li>
+            )}
+            {config.instagramUrl && (
+              <li>
+                <a
+                  href={config.instagramUrl}
+                  className="icon brands style2 fa-instagram"
+                >
+                  <span className="label">Instagram</span>
+                </a>
+              </li>
+            )}
+            {config.dribbleUrl && (
+              <li>
+                <a
+                  href={config.dribbleUrl}
+                  className="icon brands style2 fa-dribbble"
+                >
+                  <span className="label">Dribbble</span>
+                </a>
+              </li>
+            )}
+            {config.githubUrl && (
+              <li>
+                <a
+                  href={config.githubUrl}
+                  className="icon brands style2 fa-github"
+                >
+                  <span className="label">GitHub</span>
+                </a>
+              </li>
+            )}
+            {config.emailUrl && (
+              <li>
+                <a
+                  href={config.emailUrl}
+                  className="icon solid style2 fa-envelope"
+                >
+                  <span className="label">Email</span>
+                </a>
+              </li>
+            )}
+            {config.rssUrl && (
+              <li>
+                <a href={config.rssUrl} className="icon solid style2 fa-rss">
+                  <span className="label">RSS</span>
+                </a>
+              </li>
+            )}
           </ul>
         </section>
         <ul className="copyright">
