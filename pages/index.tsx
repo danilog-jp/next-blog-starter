@@ -1,7 +1,7 @@
 import * as React from "react";
 import DefaultLayout from "@/layouts/default";
 import Link from "next/link";
-import { getConfig, getPublishedPosts } from "@/api";
+import { getConfig, getPosts } from "@/api";
 import MainHeader from "@/includes/mainHeader";
 import classNames from "classNames";
 import dayjs from "dayjs";
@@ -75,7 +75,7 @@ const Blog: React.FC<any> = ({ config, allPosts }) => {
 
 export async function getStaticProps() {
   const config = await getConfig();
-  const allPosts = await getPublishedPosts();
+  const allPosts = await getPosts();
 
   return {
     props: {

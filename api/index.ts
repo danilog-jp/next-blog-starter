@@ -1,30 +1,38 @@
 import yaml from "js-yaml";
+import { PostType } from "../definitions/postMeta";
 
-export const getPublishedPosts = async () => {
-  const context = require.context("../_articles/posts", false, /\.mdx$/);
-  const posts = [];
+export const getPosts = async () => {
+  const context = require.context("../_articles/post", false, /\.mdx$/);
+  const articles = [];
   for (const key of context.keys()) {
-    const post = key.slice(2);
-    const mdxContent = await import(`../_articles/posts/${post}`);
-    posts.push({
-      slug: post.replace(".mdx", ""),
+    const fileName = key.slice(2);
+    const mdxContent = await import(`../_articles/post/${fileName}`);
+    articles.push({
+      slug: fileName.replace(".mdx", ""),
       metadata: mdxContent.metadata,
     });
   }
-  return posts;
+  return articles;
 };
 
-export const getPostBySlug = async (slug) => {
-  const mdxContent = await import(`../_articles/posts/${slug}.mdx`);
+export const getPages = async () => {
+  const context = require.context("../_articles/page", false, /\.mdx$/);
+  const articles = [];
+  for (const key of context.keys()) {
+    const fileName = key.slice(2);
+    const mdxContent = await import(`../_articles/page/${fileName}`);
+    articles.push({
+      slug: fileName.replace(".mdx", ""),
+      metadata: mdxContent.metadata,
+    });
+  }
+  return articles;
+};
+
+export const getArticleBySlug = async (postType: PostType, slug: string) => {
+  const mdxContent = await import(`../_articles/${postType}/${slug}.mdx`);
   return {
     slug,
-    metadata: mdxContent.metadata,
-  };
-};
-
-export const getPageByName = async (name) => {
-  const mdxContent = await import(`../_articles/pages/${name}.mdx`);
-  return {
     metadata: mdxContent.metadata,
   };
 };

@@ -21,9 +21,9 @@
     "paths": {
       "@/includes/*": ["_includes/*"],
       "@/layouts/*": ["_layouts/*"],
-      "@/posts/*": ["_articles/posts/*"],
-      "@/pages/*": ["_articles/pages/*"],
-      "@/drafts/*": ["_articles/drafts/*"],
+      "@/posts/*": ["_articles/post/*"],
+      "@/pages/*": ["_articles/page/*"],
+      "@/drafts/*": ["_articles/draft/*"],
       "@/api": ["api/index"]
     }
   },
