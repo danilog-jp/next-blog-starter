@@ -10,6 +10,7 @@
     "lint:fix": "eslint --fix './**/*.{ts,tsx}'"
   },
   "dependencies": {
+    "@mapbox/rehype-prism": "^0.5.0",
     "@mdx-js/loader": "^1.6.18",
     "@next/mdx": "^9.5.3",
     "js-yaml": "^3.14.0",
@@ -19,6 +20,8 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-twitter-embed": "^3.0.3",
+    "rehype-autolink-headings": "^4.0.0",
+    "rehype-slug": "^3.0.0",
     "sass": "^1.26.11"
   },
   "devDependencies": {

@@ -15,6 +15,7 @@ const DefaultLayout: React.FC<any> = ({ config, children }) => {
           name="viewport"
           content="width=device-width, initial-scale=1, user-scalable=no"
         />
+        <link href="/vendor/prism.css" rel="stylesheet" />
       </Head>
       <div id="wrapper">
         <Header config={config} />
@@ -30,6 +31,7 @@ const DefaultLayout: React.FC<any> = ({ config, children }) => {
         <script src="/js/breakpoints.min.js"></script>
         <script src="/js/util.js"></script>
         <script src="/js/main.js"></script>
+        <script src="/vendor/prism.js"></script>
       </>
     </main>
   );

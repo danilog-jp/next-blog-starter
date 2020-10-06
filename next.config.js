@@ -1,7 +1,11 @@
+const rehypeSlug = require("rehype-slug");
+const rehypeAutoLinkHeadings = require("rehype-autolink-headings");
+const rehypePrism = require("@mapbox/rehype-prism");
+
 const withMDX = require("@next/mdx")({
     options: {
         remarkPlugins: [],
-        rehypePlugins: [],
+        rehypePlugins: [rehypeSlug, rehypeAutoLinkHeadings, rehypePrism],
     },
 });
 
