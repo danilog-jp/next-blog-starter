@@ -4,7 +4,7 @@ import { getPostBySlug, getPublishedPosts, getConfig } from "@/api";
 import dynamic from "next/dynamic";
 
 const Post: React.FC<any> = ({ slug, post, config }) => {
-  const MDXContent = dynamic(() => import(`../../_posts/${slug}.mdx`));
+  const MDXContent = dynamic(() => import(`../../_articles/posts/${slug}.mdx`));
   return <PostLayout post={post} config={config} content={<MDXContent />} />;
 };
 
