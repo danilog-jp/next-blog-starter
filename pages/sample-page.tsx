@@ -1,6 +1,6 @@
 import * as React from "react";
 import PageLayout from "@/layouts/page";
-import { getPageByName, getAllPosts, getConfig } from "@/api";
+import { getPageByName, getPublishedPosts, getConfig } from "@/api";
 import dynamic from "next/dynamic";
 
 const Page: React.FC<any> = ({ slug, post, config }) => {
@@ -21,7 +21,7 @@ export async function getStaticProps() {
 }
 
 export async function getStaticPaths() {
-  let paths = await getAllPosts();
+  let paths = await getPublishedPosts();
   paths = paths.map((post) => ({
     params: { slug: post.slug },
   }));

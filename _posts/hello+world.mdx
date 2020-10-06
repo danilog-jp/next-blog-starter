@@ -1,8 +1,11 @@
-export const metadata = {
-    title: "Welcome to Next.js blog!"
-}
-
+import {PostStatus} from "../definitions/postMeta";
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
+
+export const metadata = {
+    title: "Welcome to Next.js blog!",
+    date: "2020-01-01T00:00:00",
+    status: PostStatus.published
+}
 
 **Hello world**, this is my first Next.js blog post and it is written in Markdown.
 I hope you like it!

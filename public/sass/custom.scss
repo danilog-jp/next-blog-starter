@@ -1,0 +1,18 @@
+
+// Pagination.
+.pagination-container {
+  margin-top: 0.5rem;
+    text-align: center;
+  .pagination {
+    display: inline-block;
+    padding: 1rem;
+    font-size: 1.5rem;
+
+    &.disabled {
+      pointer-events: none;
+      a:before {
+        color: lighten(_palette(fg), 40%);
+      }
+    }
+  }
+}

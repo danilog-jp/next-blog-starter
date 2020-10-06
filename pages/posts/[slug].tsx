@@ -1,6 +1,6 @@
 import * as React from "react";
 import PostLayout from "@/layouts/post";
-import { getPostBySlug, getAllPosts, getConfig } from "@/api";
+import { getPostBySlug, getPublishedPosts, getConfig } from "@/api";
 import dynamic from "next/dynamic";
 
 const Post: React.FC<any> = ({ slug, post, config }) => {
@@ -20,8 +20,9 @@ export async function getStaticProps(context) {
   };
 }
 
+// Return each post's paths for static build
 export async function getStaticPaths() {
-  let paths = await getAllPosts();
+  let paths = await getPublishedPosts();
   paths = paths.map((post) => ({
     params: { slug: post.slug },
   }));
