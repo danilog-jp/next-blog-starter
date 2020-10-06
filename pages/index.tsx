@@ -18,13 +18,13 @@ const Blog: React.FC<any> = ({ config, posts }) => {
                     post.thumbnail ||
                     "https://via.placeholder.com/450x450.png?text=+"
                   }
-                  alt={post.title}
+                  alt={post.metadata.title}
                 />
               </span>
               <Link href={"/posts/" + post.slug}>
                 <a>
-                  <h2>{post.title}</h2>
-                  <div className="content">{post.excerpt}</div>
+                  <h2>{post.metadata.title}</h2>
+                  <div className="content">{post.metadata.excerpt}</div>
                 </a>
               </Link>
             </article>

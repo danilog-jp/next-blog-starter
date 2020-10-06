@@ -1,9 +1,11 @@
 import * as React from "react";
 import PostLayout from "@/layouts/post";
 import { getPostBySlug, getAllPosts, getConfig } from "@/api";
+import dynamic from "next/dynamic";
 
-const Post: React.FC<any> = ({ post, config }) => {
-  return <PostLayout post={post} config={config} />;
+const Post: React.FC<any> = ({ slug, post, config }) => {
+  const MDXContent = dynamic(() => import(`../../_posts/${slug}.mdx`));
+  return <PostLayout post={post} config={config} content={<MDXContent />} />;
 };
 
 export async function getStaticProps(context) {
@@ -11,6 +13,7 @@ export async function getStaticProps(context) {
   const post = await getPostBySlug(context.params.slug);
   return {
     props: {
+      slug: context.params.slug,
       post,
       config,
     },
