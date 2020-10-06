@@ -22,6 +22,13 @@ export const getPostBySlug = async (slug) => {
   };
 };
 
+export const getPageByName = async (name) => {
+  const mdxContent = await import(`../_pages/${name}.mdx`);
+  return {
+    metadata: mdxContent.metadata,
+  };
+};
+
 export const getConfig = async () => {
   const config = await import(`../config.yml`);
   return yaml.safeLoad(config.default);
