@@ -2,7 +2,7 @@ import yaml from "js-yaml";
 import { PostType } from "../definitions/postMeta";
 
 export const getPosts = async () => {
-  const context = require.context("../_articles/post", false, /\.mdx$/);
+  const context = require.context("../_articles/post/", false);
   const articles = [];
   for (const key of context.keys()) {
     const fileName = key.slice(2);

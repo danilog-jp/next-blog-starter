@@ -19,13 +19,26 @@
     "jsx": "preserve",
     "baseUrl": "./",
     "paths": {
-      "@/includes/*": ["_includes/*"],
-      "@/layouts/*": ["_layouts/*"],
-      "@/posts/*": ["_articles/post/*"],
-      "@/pages/*": ["_articles/page/*"],
-      "@/drafts/*": ["_articles/draft/*"],
-      "@/api": ["api/index"]
-    }
+      "@/includes/*": [
+        "_includes/*"
+      ],
+      "@/layouts/*": [
+        "_layouts/*"
+      ],
+      "@/posts/*": [
+        "_articles/post/*"
+      ],
+      "@/pages/*": [
+        "_articles/page/*"
+      ],
+      "@/drafts/*": [
+        "_articles/draft/*"
+      ],
+      "@/api": [
+        "api/index"
+      ]
+    },
+    "incremental": true
   },
   "include": [
     "next-env.d.ts",
